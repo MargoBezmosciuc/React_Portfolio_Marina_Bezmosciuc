@@ -1,0 +1,79 @@
+@import "../../global.scss";
+
+.intro {
+  background-image: url("../../assets/intro-background2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+    .imgContainer {
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      float: right;
+      img {
+        height: 100%;
+        opacity: 0.8;
+      }
+    }
+  }
+  .right {
+    flex: 0.5;
+    position: relative;
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #000;
+      h1 {
+        font-size: 60px;
+        margin: 10px 0;
+      }
+      h2 {
+        font-size: 35px;
+      }
+      h3 {
+        font-size: 30px;
+        span {
+          font-size: inherit;
+          color: #F45050;
+          font-weight: 700;
+        }
+        .ityped-cursor {
+          animation: blink 1s infinite;
+        }
+        @keyframes blink {
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+    a {
+      position: absolute;
+      bottom: 10px;
+      img {
+        width: 30px;
+        animation: arrowBlink 2s infinite;
+      }
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
