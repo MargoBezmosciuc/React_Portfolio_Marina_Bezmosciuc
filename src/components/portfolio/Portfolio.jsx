@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./portfolio.scss";
-import random from "../../assets/random.jpg";
+//import random from "../../assets/random.jpg";
 import PortfolioList from "../portfolioList/PortfolioList";
 import {
   featuredPortfolio,
@@ -40,6 +40,20 @@ export default function Portfolio() {
       case "featured":
         setData(featuredPortfolio);
         break;
+      case "web":
+        setData(webPortfolio);
+        break;
+      case "mobile":
+        setData(mobilePortfolio);
+        break;
+      case "design":
+        setData(designPortfolio);
+        break;
+      case "content":
+        setData(contentPortfolio);
+        break;
+      default:
+        setData(featuredPortfolio);
     }
   }, [selected]);
   return (
@@ -58,30 +72,14 @@ export default function Portfolio() {
         })}
       </ul>
       <div className="container">
-        <div className="item">
-          <img src={random} alt="" />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img src={random} alt="" />
-          <h3>Banking App</h3>
-        </div>{" "}
-        <div className="item">
-          <img src={random} alt="" />
-          <h3>Banking App</h3>
-        </div>{" "}
-        <div className="item">
-          <img src={random} alt="" />
-          <h3>Banking App</h3>
-        </div>{" "}
-        <div className="item">
-          <img src={random} alt="" />
-          <h3>Banking App</h3>
-        </div>{" "}
-        <div className="item">
-          <img src={random} alt="" />
-          <h3>Banking App</h3>
-        </div>
+        {data.map((d) => {
+          return (
+            <div className="item">
+              <img src={d.img} alt="" />
+              <h3>{d.title} </h3>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
